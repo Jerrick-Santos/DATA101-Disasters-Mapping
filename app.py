@@ -15,15 +15,15 @@ from pathlib import Path
 
 # Load GeoJson
 # Opening JSON file
-f = open("DATA101-Disasters-Mapping\data\DATA101_MAP_DATA.geojson")
+f = open("data\DATA101_MAP_DATA.geojson")
 map_data = json.load(f)
 
-disasters_df = pd.read_csv("DATA101-Disasters-Mapping\data\data101_adaptability_score.csv")
-adaptability_score_df = pd.read_csv('DATA101-Disasters-Mapping\data\data101_disasters.csv')
-pop_density_df = pd.read_csv('DATA101-Disasters-Mapping\data\data101_pop_density.csv')
-timeseries_df = pd.read_csv('DATA101-Disasters-Mapping\data\data101_timeseries.csv')
-beneficiaries_df = pd.read_csv('DATA101-Disasters-Mapping\data\data101_beneficiaries_df.csv')
-disaster_by_haztype_df = pd.read_csv('DATA101-Disasters-Mapping\data\data101_disaster_by_haztype.csv')
+disasters_df = pd.read_csv("data\data101_adaptability_score.csv")
+adaptability_score_df = pd.read_csv('data\data101_disasters.csv')
+pop_density_df = pd.read_csv('data\data101_pop_density.csv')
+timeseries_df = pd.read_csv('data\data101_timeseries.csv')
+beneficiaries_df = pd.read_csv('data\data101_beneficiaries_df.csv')
+disaster_by_haztype_df = pd.read_csv('data\data101_disaster_by_haztype.csv')
 
 choropleth_options = ["Disasters", "Population Density"]
 
@@ -76,20 +76,23 @@ app.layout = dbc.Container([
             dbc.Row([
                     dbc.Col([
                         html.Div('Adaptability Score', className="text-primary text-center fs-3")
-                    ], width=6),
+                    ]),
+
                     dbc.Col([
                         html.Div('Hazard Type Bar', className="text-primary text-center fs-3"),
                         dcc.Graph(id='bar_haztype')
-                    ], width=6),
+                    ]),
                 ]),
             
             dbc.Row([
-                html.Div('Timeseries Line', className="text-primary text-center fs-3")
+                html.Div('Timeseries Line', className="text-primary text-center fs-3"),
+                dcc.Graph(id='hazTypeMonth_line')
                 ]),
             
             dbc.Row([
-                html.Div('Beneficiaries Bar', className="text-primary text-center fs-3")
-                ]),
+                html.Div('Beneficiaries Bar', className="text-primary text-center fs-3"),
+                dcc.Graph(id='benefits_cluster')
+            ]),
             
         ], width=6),
 
@@ -101,13 +104,13 @@ app.layout = dbc.Container([
 
 # Add controls to build the interaction
 
-@callback(
+@app.callback(
     Output('haztype_dropdown', 'options'),
     Input('hazcategory_dropdown', 'value'))
 def set_haztype_options(selected_category):
     return [{'label': i, 'value': i} for i in timeseries_df[timeseries_df['Hazard Category'] == selected_category]['Hazard Type'].unique()]
 
-
+# Choropleth 
 @app.callback(
     Output("choropleth", "figure"),
     [Input("region_dropdown", "value"),
@@ -143,7 +146,7 @@ def choropleth(region, hazcategory, haztype, radio):
 
     return fig
 
-
+# Hazard Types and Frequency
 @app.callback(
     Output("bar_haztype", "figure"),
     [Input("region_dropdown", "value"),
@@ -169,6 +172,91 @@ def haztype_bar(region, haztype):
 
     return fig
 
+# Received Benefits
+@app.callback(
+    Output("benefits_cluster", "figure"),
+    [Input("region_dropdown", "value")]
+)
+def benefits_cluster(region):
+    
+    target = "Region"
+    dff = beneficiaries_df.copy()
+    
+    if region is not None:
+        dff = dff[dff['Region'] == region]
+        target = "Income Classification"
+
+    fig = px.bar(dff, x=target, y="Percentage", color="Income Classification",
+                text="Percentage", # Specify the column containing text to display on bars
+                labels={"Percentage": "% of Households"}) # Set the label for the text
+
+    # Set the chart title
+    fig.update_layout(title="% Households that RECEIVED Benefits per Income Bracket (2020)")
+
+    # Set the y-axis title
+    fig.update_yaxes(title="% of Households")
+
+    # Show the figure
+    fig.show()
+
+    return fig
+
+# Hazard Type and Count per Month
+@app.callback(
+    Output("hazTypeMonth_line", "figure"),
+    [Input("region_dropdown", "value"),
+     Input("hazcategory_dropdown", "value"),
+    Input("haztype_dropdown", "value")]
+)
+def hazTypeMonth_line(region, hazcategory, haztype):
+    month_mapping = {
+        '01': 'January',
+        '02': 'February',
+        '03': 'March',
+        '04': 'April',
+        '05': 'May',
+        '06': 'June',
+        '07': 'July',
+        '08': 'August',
+        '09': 'September',
+        '10': 'October',
+        '11': 'November',
+        '12': 'December'
+    }
+
+    filtered_timeseries = timeseries_df
+    
+    # Filter timeseries data based on dropdown selections
+    time_series = filtered_timeseries[
+        (timeseries_df['Region'].isin(region)) &
+        (timeseries_df['Hazard Category'].isin(hazcategory)) &
+        (timeseries_df['Hazard Type'].isin(haztype))
+    ]
+    # filtered_timeseries = merged_df
+    # filtered_timeseries = timeseries_df
+    # time_series = filtered_timeseries[["adm1_psgc", "Date of Event (start)", "Hazard Type"]]
+
+    # Change dtype to datetime
+    time_series['Date of Event (start)'] = pd.to_datetime(time_series['Date of Event (start)'])
+    # print("filtered timeseries", filtered_timeseries)
+    
+    # Group by month and hazard type
+    format_time_series = time_series.groupby([time_series['Date of Event (start)'].dt.strftime('%m'), "Hazard Type"])["Hazard Type"].count().sort_values().reset_index(name='Count')
+    format_time_series = format_time_series.sort_values(by='Date of Event (start)', ascending=True)
+
+    # Step 3: Change Numeric Month Format to Character (e.g., 01 = Jan)
+    format_time_series['Date of Event (start)'] = format_time_series['Date of Event (start)'].map(month_mapping)
+
+    # print(format_time_series)
+
+    # Create line plot
+    fig = px.line(format_time_series, x='Date of Event (start)', y='Count', color='Hazard Type', markers=True)
+    fig.update_layout(
+        title="Line Plot - Regions and Hazard Category",
+        yaxis_title="Number of Disasters",
+        yaxis_range=[0, 15]
+    )
+    return fig
 
 if __name__ == '__main__':
     app.run_server()
