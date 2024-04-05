@@ -18,8 +18,8 @@ from pathlib import Path
 f = open("data\DATA101_MAP_DATA.geojson")
 map_data = json.load(f)
 
-disasters_df = pd.read_csv("data\data101_adaptability_score.csv")
-adaptability_score_df = pd.read_csv('data\data101_disasters.csv')
+adaptability_score_df  = pd.read_csv("data\data101_adaptability_score.csv")
+disasters_df = pd.read_csv('data\data101_disasters.csv')
 pop_density_df = pd.read_csv('data\data101_pop_density.csv')
 timeseries_df = pd.read_csv('data\data101_timeseries.csv')
 beneficiaries_df = pd.read_csv('data\data101_beneficiaries_df.csv')
@@ -103,8 +103,6 @@ app.layout = dbc.Container([
 
 ], fluid=True)
 
-# Add controls to build the interaction
-
 @app.callback(
     Output('haztype_dropdown', 'options'),
     Input('hazcategory_dropdown', 'value'))
@@ -152,19 +150,29 @@ def choropleth(region, hazcategory, haztype, radio):
 @app.callback(
     Output("adaptability_bar", "figure"),
     Input("region_dropdown", "value")
-    )
+)
 def adaptability_bar(region):
-    
-    target = "Region"
-    dff = adaptability_score_df.copy()
-    
     if region is not None:
-        dff = dff[dff['Region'] == region]
+        dff = adaptability_score_df[adaptability_score_df['Region'] == region]
+    else:
+        # Calculate averages across all regions
+        dff = adaptability_score_df.mean().to_frame().reset_index()
+        dff.columns = ['Indicator', 'Average Score']
 
-    fig = px.bar(dff, x=target, y="Count", color="Region")
-    fig.update_layout(yaxis_title="Adaptability Score and Indicators")
+    # Prepare data for plotting
+    x = dff.columns[1:]  # Scores
+    y = dff.columns[0]   # Indicators
+    fig = px.bar(dff, x=x, y=y, orientation='h')
+    
+    # Update layout
+    fig.update_layout(
+        title="Adaptability Scores and Indicators",
+        xaxis_title="Score",
+        yaxis_title="Indicator",
+        barmode='group'
+    )
     fig.show()
-
+    
     return fig
 
 
@@ -189,8 +197,6 @@ def haztype_bar(region, haztype):
 
     fig = px.bar(dff, x=target, y="Count", color="Hazard Type")
     fig.update_layout(yaxis_title="Number of Disasters per Hazard Type")
-    fig.show()
-
 
     return fig
 
@@ -217,9 +223,6 @@ def benefits_cluster(region):
 
     # Set the y-axis title
     fig.update_yaxes(title="% of Households")
-
-    # Show the figure
-    fig.show()
 
     return fig
 
