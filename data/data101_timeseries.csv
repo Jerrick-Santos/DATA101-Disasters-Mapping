@@ -1,0 +1,46 @@
+adm1_psgc,Region,Event Name,Date of Event (start),Hazard Category,Hazard Type
+1200000000.0,SOCCSKSARGEN,Philippines: Flash flood - South Cotabato (Koronadal) - 28/07/2020,2020-07-28,Weather related,Flood
+300000000.0,Central Luzon,Philippines: Tornado - Bulacan (Pulilan) - 06/07/2020,2020-07-06,Weather related,Storm
+100000000.0,Ilocos,Philippines: Tornado - Pangasinan (Basista) - 14/05/2020,2020-05-14,Weather related,Storm
+1200000000.0,SOCCSKSARGEN,Philippines: Tornado - Sultan Kudarat (President Quirino) - 07/06/2020,2020-06-07,Weather related,Storm
+1200000000.0,SOCCSKSARGEN,Philippines: Flash flood - Sultan Kudarat (Bagumbayan) - 14/09/2020,2020-09-14,Weather related,Flood
+100000000.0,Ilocos,Philippines: Tornado - Pangasinan (Bayambang) - 27/04/2020,2020-04-27,Weather related,Storm
+900000000.0,Zamboanga Peninsula,Philippines: Flash flood - Davao del Sur (Digos) - 28/06/2020,2020-06-28,Weather related,Flood
+600000000.0,Western Visayas,Philippines: Flash flood - Zamboanga (Zamboanga Sibugay) - 24/06/2020,2020-06-24,Weather related,Flood
+600000000.0,Western Visayas,Philippines: Dry mass movement - Negros Occidental (Bago) -  24/06/2020,2020-06-24,Geophysical,Mass Movement
+1900000000.0,BARMM,Philippines: Flood - Culasi (Antique) - 15/09/2020,2020-09-15,Weather related,Flood
+500000000.0,Bicol Region,Philippines: Soil erosion - Lanao del Sur (Marawi city) - 2020 ,2020-08-09,Weather related,Mass Movement
+900000000.0,Zamboanga Peninsula,Philippines: Earthquake - Bicol (Masbate) - 18/08/2020,2020-08-18,Geophysical,Earthquake
+1100000000.0,Davao Region,Philippines: Flash flood - Zamboanga (Zamboanga Sibugay) - 31/07/2020,2020-07-31,Weather related,Flood
+700000000.0,Central Visayas,Philippines: Flash flood - Davao (Davao de Oro) - 13/08/2020,2020-08-13,Weather related,Flood
+600000000.0,Western Visayas,Philippines: Whirlwind - Misamis Occidental (Tudela) - 05/08/2020,2020-08-05,Weather related,Storm
+1100000000.0,Davao Region,Philippines: Flood - Western Visayas (Negros Occidental) - 31/07/2020,2020-07-31,Weather related,Flood
+900000000.0,Zamboanga Peninsula,Philippines: Flash flood - Davao del Sur (Davao city) - 04/08/2020,2020-08-04,Weather related,Flood
+1200000000.0,SOCCSKSARGEN,Philippines: Flash flood - Zamboanga - 09/08/2020,2020-08-09,Weather related,Flood
+900000000.0,Zamboanga Peninsula,Philippines: Flash flood - Sultan Kudarat (Palimbang) - 15/09/2020 ,2020-09-15,Weather related,Flood
+1200000000.0,SOCCSKSARGEN,Philippines: Flash flood - Zamboanga (Zamboanga city) - 15/09/2020,2020-09-15,Weather related,Flood
+900000000.0,Zamboanga Peninsula,Philippines: Storm - South Cotabato (Surallah) - 11/08/2020,2020-08-11,Weather related,Storm
+1200000000.0,SOCCSKSARGEN,Philippines: Southwest Monsoon enhanced by Tropical Storm Leon - Occidental Mindoro (Magsaysay) - 15/09/2020,2020-09-15,Weather related,Storm
+1100000000.0,Davao Region,Philippines: Tornado - Sultan Kudarat (Lambayong) - 22/09/2020,2020-09-22,Weather related,Storm
+700000000.0,Central Visayas,Philippines: Flash flood - Davao del Sur (Davao City) -19/10/2020,2020-10-19,Weather related,Flood
+100000000.0,Ilocos,Philippines: Flooding - Cebu - 04/10/2020,2020-10-04,Weather related,Flood
+700000000.0,Central Visayas,Philippines: Tornado - CAR (Ifugao) - 14/05/2020,2020-05-14,Weather related,Storm
+1900000000.0,BARMM,Philippines: Flash flood - Central Visayas (Cebu) - 13/10/2020,2020-10-13,Weather related,Flood
+1200000000.0,SOCCSKSARGEN,Philippines: Flash flood - Basilan (Lamitan) - 15/10/2020,2020-10-15,Weather related,Flood
+700000000.0,Central Visayas,Philippines: Flash flood - North Cotabato (Kabacan) - 14/10/2020,2020-10-14,Weather related,Flood
+1900000000.0,BARMM,Philippines: Risk of landslides - Cebu (Cebu City) - October 2020,2020-10-14,Weather related,Mass Movement
+600000000.0,Western Visayas,Philippines: Flash flood - North Cotabato (Pigcawayan) - 17/10/2020 ,2020-10-17,Weather related,Flood
+600000000.0,Western Visayas,"Philippines: Flash flood - Soccsksargen (Region XII) (North Cotabato, Makilala) - 20/10/2020 ",2020-10-20,Weather related,Flood
+600000000.0,Western Visayas,"Philippines: Flooding Incident in Region VI - Western Visayas (Capiz, Iloilo) - 02/12/2020",2020-12-02,Weather related,Flood
+200000000.0,Cagayan Valley,Philippines: Strong wind - Davao Region (Davao del sur/Davao city) - 20/08/2020,2020-08-20,Weather related,Storm
+400000000.0,CALABARZON,Philippines: Flood - Western Visayas (Negros oriental/4 municipalities) - 31/12/2020,2020-12-31,Weather related,Flood
+300000000.0,Central Luzon,"Philippines: Storm (North East Monsoon) - Western Visaya (Aklan, New Washington) - 30/11/2020",2020-11-30,Weather related,Storm
+1700000000.0,MIMAROPA,"Philippines: Northeast Monsoon Enhanced by Tropical Depression “VICKY” - Cagayan Valley (Cagayan, Isabella, Quirino) - 20/12/2020 ",2020-12-20,Weather related,Storm
+900000000.0,Zamboanga Peninsula,"Philippines: Volcanic Eruption (Mount Taal) - Calabarzon, NCR, Central Luzon, MIMAROPA - 12/01/2020",2020-01-12,Geophysical,Volcanic activity
+100000000.0,Ilocos,"Philippines: Flash flood - Zamboanga del Sur, Zamboanga del Norte - 17/10/2020",2020-10-17,Weather related,Flood
+400000000.0,CALABARZON,"Philippines: Flash flood - Cagayan Valley, CAR - 25/10/2020",2020-10-25,Weather related,Flood
+700000000.0,Central Visayas,"Philippines: Effects of the Tail End of a Cold Front - Ilocos, Cagayan Valley - 09/11/2020",2020-11-09,Weather related,Flood
+1100000000.0,Davao Region,"Philippines: Tropical Depression Ofel - Calabarzon, Bicol, Central Visayas - 13/10/2020",2020-10-13,Weather related,Storm
+1100000000.0,Davao Region,"Philippines: Tropical depression KROVANH (""Vicky "" PHL) - Davao, Caraga - 18/12/2020",2020-12-18,Weather related,Storm
+700000000.0,Central Visayas,Philippines: Flooding Incident in Cebu Province due to LPA - 02/12/2020,2020-12-02,Weather related,Flood
+600000000.0,Western Visayas,"Philippines: Tornado, Western Visayas (Antique, San Jose) - 06/11/2020",2020-11-06,Weather related,Storm

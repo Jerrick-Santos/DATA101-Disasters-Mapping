@@ -1,0 +1,77 @@
+Region,Income Classification,G5 - Beneficiary of social assistance program Yes/No,Count,adm1_psgc,Overall,Percentage
+BARMM,Low income,Yes,320,1900000000,979,0.33
+BARMM,Lower middle class,Yes,55,1900000000,169,0.33
+BARMM,Middle class,Yes,3,1900000000,34,0.09
+BARMM,Poor,Yes,238,1900000000,739,0.32
+Bicol Region,Low income,Yes,299,500000000,675,0.44
+Bicol Region,Lower middle class,Yes,57,500000000,203,0.28
+Bicol Region,Middle class,Yes,17,500000000,65,0.26
+Bicol Region,Poor,Yes,583,500000000,1272,0.46
+Bicol Region,Upper middle income,Yes,1,500000000,8,0.12
+CALABARZON,Low income,Yes,111,400000000,852,0.13
+CALABARZON,Lower middle class,Yes,22,400000000,318,0.07
+CALABARZON,Middle class,Yes,1,400000000,59,0.02
+CALABARZON,Poor,Yes,166,400000000,875,0.19
+CALABARZON,Upper middle income,Yes,1,400000000,15,0.07
+CAR,Low income,Yes,265,1400000000,916,0.29
+CAR,Lower middle class,Yes,55,1400000000,324,0.17
+CAR,Middle class,Yes,9,1400000000,90,0.1
+CAR,Poor,Yes,362,1400000000,974,0.37
+CAR,Upper middle income,Yes,1,1400000000,21,0.05
+Cagayan Valley,Low income,Yes,112,200000000,476,0.24
+Cagayan Valley,Lower middle class,Yes,23,200000000,163,0.14
+Cagayan Valley,Middle class,Yes,4,200000000,67,0.06
+Cagayan Valley,Poor,Yes,326,200000000,964,0.34
+Caraga,Low income,Yes,305,1600000000,640,0.48
+Caraga,Lower middle class,Yes,62,1600000000,191,0.32
+Caraga,Middle class,Yes,29,1600000000,94,0.31
+Caraga,Poor,Yes,509,1600000000,1017,0.5
+Caraga,Upper middle income,Yes,12,1600000000,30,0.4
+Central Luzon,Low income,Yes,216,300000000,1447,0.15
+Central Luzon,Lower middle class,Yes,42,300000000,424,0.1
+Central Luzon,Middle class,Yes,4,300000000,87,0.05
+Central Luzon,Poor,Yes,254,300000000,1333,0.19
+Central Luzon,Upper middle income,Yes,1,300000000,21,0.05
+Central Visayas,High income,Yes,1,700000000,5,0.2
+Central Visayas,Low income,Yes,219,700000000,858,0.26
+Central Visayas,Lower middle class,Yes,37,700000000,249,0.15
+Central Visayas,Middle class,Yes,11,700000000,56,0.2
+Central Visayas,Poor,Yes,435,700000000,1083,0.4
+Central Visayas,Upper middle income,Yes,2,700000000,17,0.12
+Davao Region,Low income,Yes,246,1100000000,748,0.33
+Davao Region,Lower middle class,Yes,55,1100000000,211,0.26
+Davao Region,Middle class,Yes,7,1100000000,55,0.13
+Davao Region,Poor,Yes,554,1100000000,1308,0.42
+Davao Region,Upper middle income,Yes,2,1100000000,5,0.4
+Eastern Visayas,Low income,Yes,188,800000000,657,0.29
+Eastern Visayas,Lower middle class,Yes,15,800000000,209,0.07
+Eastern Visayas,Middle class,Yes,2,800000000,62,0.03
+Eastern Visayas,Poor,Yes,487,800000000,1650,0.3
+Ilocos,Low income,Yes,114,100000000,600,0.19
+Ilocos,Lower middle class,Yes,24,100000000,196,0.12
+Ilocos,Middle class,Yes,2,100000000,30,0.07
+Ilocos,Poor,Yes,198,100000000,709,0.28
+Ilocos,Upper middle income,Yes,1,100000000,12,0.08
+MIMAROPA,Low income,Yes,316,1700000000,799,0.4
+MIMAROPA,Lower middle class,Yes,30,1700000000,175,0.17
+MIMAROPA,Middle class,Yes,6,1700000000,53,0.11
+MIMAROPA,Poor,Yes,471,1700000000,1118,0.42
+MIMAROPA,Upper middle income,Yes,2,1700000000,18,0.11
+Northern Mindanao,Low income,Yes,279,1000000000,839,0.33
+Northern Mindanao,Lower middle class,Yes,38,1000000000,214,0.18
+Northern Mindanao,Middle class,Yes,5,1000000000,43,0.12
+Northern Mindanao,Poor,Yes,539,1000000000,1424,0.38
+SOCCSKSARGEN,Low income,Yes,216,1200000000,601,0.36
+SOCCSKSARGEN,Lower middle class,Yes,34,1200000000,162,0.21
+SOCCSKSARGEN,Middle class,Yes,13,1200000000,71,0.18
+SOCCSKSARGEN,Poor,Yes,435,1200000000,1208,0.36
+SOCCSKSARGEN,Upper middle income,Yes,8,1200000000,20,0.4
+Western Visayas,Low income,Yes,328,600000000,932,0.35
+Western Visayas,Lower middle class,Yes,73,600000000,295,0.25
+Western Visayas,Middle class,Yes,12,600000000,67,0.18
+Western Visayas,Poor,Yes,577,600000000,1477,0.39
+Western Visayas,Upper middle income,Yes,1,600000000,21,0.05
+Zamboanga Peninsula,Low income,Yes,127,900000000,368,0.35
+Zamboanga Peninsula,Lower middle class,Yes,29,900000000,129,0.22
+Zamboanga Peninsula,Middle class,Yes,6,900000000,49,0.12
+Zamboanga Peninsula,Poor,Yes,541,900000000,1058,0.51

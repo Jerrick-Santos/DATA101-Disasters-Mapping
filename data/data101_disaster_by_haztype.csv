@@ -1,0 +1,23 @@
+adm1_psgc,Hazard Type,Count,Region
+100000000.0,Flood,2,Ilocos
+100000000.0,Storm,2,Ilocos
+200000000.0,Storm,1,Cagayan Valley
+300000000.0,Storm,2,Central Luzon
+400000000.0,Flood,2,CALABARZON
+500000000.0,Mass Movement,1,Bicol Region
+600000000.0,Flood,4,Western Visayas
+600000000.0,Mass Movement,1,Western Visayas
+600000000.0,Storm,2,Western Visayas
+700000000.0,Flood,5,Central Visayas
+700000000.0,Storm,1,Central Visayas
+900000000.0,Earthquake,1,Zamboanga Peninsula
+900000000.0,Flood,3,Zamboanga Peninsula
+900000000.0,Storm,1,Zamboanga Peninsula
+900000000.0,Volcanic activity,1,Zamboanga Peninsula
+1100000000.0,Flood,2,Davao Region
+1100000000.0,Storm,3,Davao Region
+1200000000.0,Flood,5,SOCCSKSARGEN
+1200000000.0,Storm,2,SOCCSKSARGEN
+1700000000.0,Storm,1,MIMAROPA
+1900000000.0,Flood,2,BARMM
+1900000000.0,Mass Movement,1,BARMM
