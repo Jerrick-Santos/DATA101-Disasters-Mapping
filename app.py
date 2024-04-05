@@ -75,7 +75,8 @@ app.layout = dbc.Container([
             
             dbc.Row([
                     dbc.Col([
-                        html.Div('Adaptability Score', className="text-primary text-center fs-3")
+                        html.Div('Adaptability Score', className="text-primary text-center fs-3"),
+                        dcc.Graph(id='adaptability_bar')
                     ]),
 
                     dbc.Col([
@@ -145,6 +146,27 @@ def choropleth(region, hazcategory, haztype, radio):
 
 
     return fig
+
+# Adaptability Score
+# - bar graph (y - score; x - indicators)
+@app.callback(
+    Output("adaptability_bar", "figure"),
+    Input("region_dropdown", "value")
+    )
+def adaptability_bar(region):
+    
+    target = "Region"
+    dff = adaptability_score_df.copy()
+    
+    if region is not None:
+        dff = dff[dff['Region'] == region]
+
+    fig = px.bar(dff, x=target, y="Count", color="Region")
+    fig.update_layout(yaxis_title="Adaptability Score and Indicators")
+    fig.show()
+
+    return fig
+
 
 # Hazard Types and Frequency
 @app.callback(
@@ -227,14 +249,14 @@ def hazTypeMonth_line(region, hazcategory, haztype):
     filtered_timeseries = timeseries_df
     
     # Filter timeseries data based on dropdown selections
-    time_series = filtered_timeseries[
-        (timeseries_df['Region'].isin(region)) &
-        (timeseries_df['Hazard Category'].isin(hazcategory)) &
-        (timeseries_df['Hazard Type'].isin(haztype))
-    ]
+    # time_series = filtered_timeseries[
+    #     (timeseries_df['Region'].isin(region)) &
+    #     (timeseries_df['Hazard Category'].isin(hazcategory)) &
+    #     (timeseries_df['Hazard Type'].isin(haztype))
+    # ]
     # filtered_timeseries = merged_df
     # filtered_timeseries = timeseries_df
-    # time_series = filtered_timeseries[["adm1_psgc", "Date of Event (start)", "Hazard Type"]]
+    time_series = filtered_timeseries[["adm1_psgc", "Date of Event (start)", "Hazard Type", "Hazard Category"]]
 
     # Change dtype to datetime
     time_series['Date of Event (start)'] = pd.to_datetime(time_series['Date of Event (start)'])
