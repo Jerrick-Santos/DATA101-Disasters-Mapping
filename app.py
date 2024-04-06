@@ -15,7 +15,7 @@ from pathlib import Path
 
 # Load GeoJson
 # Opening JSON file
-f = open("data\DATA101_MAP_DATA.geojson")
+f = open("DATA101-Disasters-Mapping\data\DATA101_MAP_DATA.geojson")
 map_data = json.load(f)
 
 disasters_df = pd.read_csv("DATA101-Disasters-Mapping\data\data101_disasters.csv")
@@ -102,7 +102,7 @@ app.layout = dbc.Container([
                             children=dcc.Graph(id='adaptability_score')
                             ),
                         
-                    ], width=4),
+                    ], width=6),
 
                     dbc.Col([
                             dcc.Loading(
@@ -110,7 +110,7 @@ app.layout = dbc.Container([
                             type="circle",
                             children=dcc.Graph(id='bar_haztype')
                             ),
-                    ], width=8),
+                    ], width=6),
                 ])
             
         ], width=7),
@@ -160,10 +160,12 @@ def choropleth(region, hazcategory, haztype, radio):
         dff = disasters_df.copy()
         target = "Total Disasters"
         color_choice = "Blues"
+        title_text = "Distribution of Disasters" 
     elif radio == "Population Density": # Population Density
         dff = pop_density_df.copy()
         target = "Population Density"
         color_choice = "OrRd"
+        title_text = "Distribution of Population Density" 
     
     if region is not None:
         dff = dff[dff['Region'] == region]
@@ -179,6 +181,7 @@ def choropleth(region, hazcategory, haztype, radio):
                            color=target,
                             featureidkey="properties.Region",
                            color_continuous_scale=color_choice)
+    fig.update_layout(title=title_text)
     fig.update_geos(fitbounds="locations", visible=False)
 
 
@@ -214,10 +217,12 @@ def adaptability_score(region, radio):
         fig.update_traces(textinfo='none')
         fig.data[0].textfont.color = 'white'
         fig.add_annotation(text=str(adpt_score), x=0.5, y=0.5, font=dict(color='black', size=20), showarrow=False)
+        fig.update_layout(title="Adaptability Score")
 
     elif radio == "Indicators": 
         filtered_score = adaptability_score_df[(adaptability_score_df['Region'] == reg) & (adaptability_score_df['Score Type'] != 'Adaptability Score')]
         fig = px.bar(filtered_score.sort_values(by='Score', ascending=True), x="Score", y="Score Type", orientation='h')
+        fig.update_layout(title="Adaptability Score - Indicators")
 
 
     return fig
@@ -267,7 +272,7 @@ def benefits_cluster(region):
                 labels={"Percentage": "% of Households"}) # Set the label for the text
 
     # Set the chart title
-    fig.update_layout(title="% Households that RECEIVED Benefits per Income Bracket (2020)")
+    fig.update_layout(title="% Households that RECEIVED Benefits per Income Bracket")
 
     # Set the y-axis title
     fig.update_yaxes(title="% of Households")
@@ -309,7 +314,7 @@ def hazTypeMonth_line(region, haztype):
     # Create line plot
     fig = px.line(format_time_series, x='Date of Event (start)', y='Count', color='Hazard Type', markers=True)
     fig.update_layout(
-        title="Line Plot - Regions and Hazard Category",
+        title="Hazard Types over Time",
         yaxis_title="Number of Disasters",
         yaxis_range=[0, 15]
     )
