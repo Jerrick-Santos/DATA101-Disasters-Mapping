@@ -1,0 +1,205 @@
+Region,Score Type,Score
+BARMM,Vehicle Score,1.37
+BARMM,Appliance Score,1.36
+BARMM,Communication Access Score,2.43
+BARMM,Cooperative Member Score,1.08
+BARMM,Potable Water Score,2.66
+BARMM,Insurance Score,1.48
+BARMM,Government Assistance Score,2.28
+BARMM,Number of Children Score,3.18
+BARMM,Sick Family Members Score,4.06
+BARMM,Income Class Score,1.13
+BARMM,Electricity Score,4.36
+BARMM,Adaptability Score,2.31
+Bicol Region,Vehicle Score,1.33
+Bicol Region,Appliance Score,1.7
+Bicol Region,Communication Access Score,2.71
+Bicol Region,Cooperative Member Score,1.67
+Bicol Region,Potable Water Score,2.98
+Bicol Region,Insurance Score,3.05
+Bicol Region,Government Assistance Score,2.72
+Bicol Region,Number of Children Score,3.34
+Bicol Region,Sick Family Members Score,3.54
+Bicol Region,Income Class Score,1.17
+Bicol Region,Electricity Score,4.71
+Bicol Region,Adaptability Score,2.63
+CALABARZON,Vehicle Score,1.34
+CALABARZON,Appliance Score,2.1
+CALABARZON,Communication Access Score,2.89
+CALABARZON,Cooperative Member Score,1.23
+CALABARZON,Potable Water Score,3.54
+CALABARZON,Insurance Score,3.73
+CALABARZON,Government Assistance Score,1.57
+CALABARZON,Number of Children Score,3.59
+CALABARZON,Sick Family Members Score,3.97
+CALABARZON,Income Class Score,1.24
+CALABARZON,Electricity Score,4.92
+CALABARZON,Adaptability Score,2.74
+CAR,Vehicle Score,1.35
+CAR,Appliance Score,1.88
+CAR,Communication Access Score,2.88
+CAR,Cooperative Member Score,3.1
+CAR,Potable Water Score,3.16
+CAR,Insurance Score,2.91
+CAR,Government Assistance Score,2.19
+CAR,Number of Children Score,3.58
+CAR,Sick Family Members Score,4.49
+CAR,Income Class Score,1.25
+CAR,Electricity Score,4.86
+CAR,Adaptability Score,2.88
+Cagayan Valley,Vehicle Score,1.52
+Cagayan Valley,Appliance Score,1.97
+Cagayan Valley,Communication Access Score,2.99
+Cagayan Valley,Cooperative Member Score,3.63
+Cagayan Valley,Potable Water Score,3.31
+Cagayan Valley,Insurance Score,3.01
+Cagayan Valley,Government Assistance Score,2.09
+Cagayan Valley,Number of Children Score,3.54
+Cagayan Valley,Sick Family Members Score,4.5
+Cagayan Valley,Income Class Score,1.24
+Cagayan Valley,Electricity Score,4.81
+Cagayan Valley,Adaptability Score,2.96
+Caraga,Vehicle Score,1.4
+Caraga,Appliance Score,1.79
+Caraga,Communication Access Score,2.72
+Caraga,Cooperative Member Score,1.39
+Caraga,Potable Water Score,3.39
+Caraga,Insurance Score,3.4
+Caraga,Government Assistance Score,2.86
+Caraga,Number of Children Score,3.39
+Caraga,Sick Family Members Score,3.52
+Caraga,Income Class Score,1.24
+Caraga,Electricity Score,4.8
+Caraga,Adaptability Score,2.72
+Central Luzon,Vehicle Score,1.44
+Central Luzon,Appliance Score,2.11
+Central Luzon,Communication Access Score,2.93
+Central Luzon,Cooperative Member Score,1.16
+Central Luzon,Potable Water Score,3.43
+Central Luzon,Insurance Score,3.3
+Central Luzon,Government Assistance Score,1.62
+Central Luzon,Number of Children Score,3.5
+Central Luzon,Sick Family Members Score,4.37
+Central Luzon,Income Class Score,1.21
+Central Luzon,Electricity Score,4.89
+Central Luzon,Adaptability Score,2.72
+Central Visayas,Vehicle Score,1.38
+Central Visayas,Appliance Score,1.79
+Central Visayas,Communication Access Score,2.92
+Central Visayas,Cooperative Member Score,2.02
+Central Visayas,Potable Water Score,3.52
+Central Visayas,Insurance Score,3.36
+Central Visayas,Government Assistance Score,2.24
+Central Visayas,Number of Children Score,3.6
+Central Visayas,Sick Family Members Score,4.57
+Central Visayas,Income Class Score,1.19
+Central Visayas,Electricity Score,4.7
+Central Visayas,Adaptability Score,2.84
+Davao Region,Vehicle Score,1.37
+Davao Region,Appliance Score,1.63
+Davao Region,Communication Access Score,2.57
+Davao Region,Cooperative Member Score,1.26
+Davao Region,Potable Water Score,3.19
+Davao Region,Insurance Score,2.89
+Davao Region,Government Assistance Score,2.48
+Davao Region,Number of Children Score,3.5
+Davao Region,Sick Family Members Score,4.54
+Davao Region,Income Class Score,1.15
+Davao Region,Electricity Score,4.47
+Davao Region,Adaptability Score,2.64
+Eastern Visayas,Vehicle Score,1.35
+Eastern Visayas,Appliance Score,1.74
+Eastern Visayas,Communication Access Score,2.63
+Eastern Visayas,Cooperative Member Score,2.05
+Eastern Visayas,Potable Water Score,3.34
+Eastern Visayas,Insurance Score,2.77
+Eastern Visayas,Government Assistance Score,2.06
+Eastern Visayas,Number of Children Score,3.49
+Eastern Visayas,Sick Family Members Score,3.99
+Eastern Visayas,Income Class Score,1.16
+Eastern Visayas,Electricity Score,4.79
+Eastern Visayas,Adaptability Score,2.67
+Ilocos,Vehicle Score,1.49
+Ilocos,Appliance Score,2.04
+Ilocos,Communication Access Score,3.07
+Ilocos,Cooperative Member Score,1.4
+Ilocos,Potable Water Score,3.58
+Ilocos,Insurance Score,3.14
+Ilocos,Government Assistance Score,1.88
+Ilocos,Number of Children Score,3.62
+Ilocos,Sick Family Members Score,4.26
+Ilocos,Income Class Score,1.19
+Ilocos,Electricity Score,4.94
+Ilocos,Adaptability Score,2.78
+MIMAROPA,Vehicle Score,1.48
+MIMAROPA,Appliance Score,1.82
+MIMAROPA,Communication Access Score,2.67
+MIMAROPA,Cooperative Member Score,1.68
+MIMAROPA,Potable Water Score,3.32
+MIMAROPA,Insurance Score,3.13
+MIMAROPA,Government Assistance Score,2.52
+MIMAROPA,Number of Children Score,3.36
+MIMAROPA,Sick Family Members Score,3.79
+MIMAROPA,Income Class Score,1.16
+MIMAROPA,Electricity Score,4.66
+MIMAROPA,Adaptability Score,2.69
+Northern Mindanao,Vehicle Score,1.37
+Northern Mindanao,Appliance Score,1.85
+Northern Mindanao,Communication Access Score,2.98
+Northern Mindanao,Cooperative Member Score,1.48
+Northern Mindanao,Potable Water Score,3.19
+Northern Mindanao,Insurance Score,3.1
+Northern Mindanao,Government Assistance Score,2.36
+Northern Mindanao,Number of Children Score,3.46
+Northern Mindanao,Sick Family Members Score,4.15
+Northern Mindanao,Income Class Score,1.13
+Northern Mindanao,Electricity Score,4.67
+Northern Mindanao,Adaptability Score,2.7
+SOCCSKSARGEN,Vehicle Score,1.37
+SOCCSKSARGEN,Appliance Score,1.73
+SOCCSKSARGEN,Communication Access Score,2.77
+SOCCSKSARGEN,Cooperative Member Score,1.63
+SOCCSKSARGEN,Potable Water Score,3.13
+SOCCSKSARGEN,Insurance Score,2.93
+SOCCSKSARGEN,Government Assistance Score,2.37
+SOCCSKSARGEN,Number of Children Score,3.47
+SOCCSKSARGEN,Sick Family Members Score,3.84
+SOCCSKSARGEN,Income Class Score,1.19
+SOCCSKSARGEN,Electricity Score,4.71
+SOCCSKSARGEN,Adaptability Score,2.65
+Western Visayas,Vehicle Score,1.35
+Western Visayas,Appliance Score,1.82
+Western Visayas,Communication Access Score,2.94
+Western Visayas,Cooperative Member Score,1.36
+Western Visayas,Potable Water Score,3.26
+Western Visayas,Insurance Score,3.12
+Western Visayas,Government Assistance Score,2.42
+Western Visayas,Number of Children Score,3.54
+Western Visayas,Sick Family Members Score,3.93
+Western Visayas,Income Class Score,1.18
+Western Visayas,Electricity Score,4.82
+Western Visayas,Adaptability Score,2.7
+Zamboanga Peninsula,Vehicle Score,1.36
+Zamboanga Peninsula,Appliance Score,1.68
+Zamboanga Peninsula,Communication Access Score,2.76
+Zamboanga Peninsula,Cooperative Member Score,1.43
+Zamboanga Peninsula,Potable Water Score,3.08
+Zamboanga Peninsula,Insurance Score,2.45
+Zamboanga Peninsula,Government Assistance Score,2.73
+Zamboanga Peninsula,Number of Children Score,3.36
+Zamboanga Peninsula,Sick Family Members Score,4.4
+Zamboanga Peninsula,Income Class Score,1.18
+Zamboanga Peninsula,Electricity Score,4.48
+Zamboanga Peninsula,Adaptability Score,2.63
+PH,Vehicle Score,1.39
+PH,Appliance Score,1.81
+PH,Communication Access Score,2.8
+PH,Cooperative Member Score,1.72
+PH,Potable Water Score,3.25
+PH,Insurance Score,2.98
+PH,Government Assistance Score,2.27
+PH,Number of Children Score,3.47
+PH,Sick Family Members Score,4.12
+PH,Income Class Score,1.19
+PH,Electricity Score,4.72
+PH,Adaptability Score,2.7
