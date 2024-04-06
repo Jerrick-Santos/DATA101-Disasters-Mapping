@@ -15,7 +15,7 @@ from pathlib import Path
 
 # Load GeoJson
 # Opening JSON file
-f = open("DATA101-Disasters-Mapping\data\DATA101_MAP_DATA.geojson")
+f = open("data\DATA101_MAP_DATA.geojson")
 map_data = json.load(f)
 
 disasters_df = pd.read_csv("DATA101-Disasters-Mapping\data\data101_disasters.csv")
