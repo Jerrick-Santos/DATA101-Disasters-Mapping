@@ -15,15 +15,15 @@ from pathlib import Path
 
 # Load GeoJson
 # Opening JSON file
-f = open("DATA101-Disasters-Mapping\data\DATA101_MAP_DATA.geojson")
+f = open("data\DATA101_MAP_DATA.geojson")
 map_data = json.load(f)
 
-disasters_df = pd.read_csv("DATA101-Disasters-Mapping\data\data101_disasters.csv")
-adaptability_score_df = pd.read_csv('DATA101-Disasters-Mapping\data\data101_finalz_adaptability_score.csv')
-pop_density_df = pd.read_csv('DATA101-Disasters-Mapping\data\data101_pop_density.csv')
-timeseries_df = pd.read_csv('DATA101-Disasters-Mapping\data\data101_timeseries.csv')
-beneficiaries_df = pd.read_csv('DATA101-Disasters-Mapping\data\data101_beneficiaries_df.csv')
-disaster_by_haztype_df = pd.read_csv('DATA101-Disasters-Mapping\data\data101_disaster_by_haztype.csv')
+disasters_df = pd.read_csv("data\data101_disasters.csv")
+adaptability_score_df = pd.read_csv('data\data101_finalz_adaptability_score.csv')
+pop_density_df = pd.read_csv('data\data101_pop_density.csv')
+timeseries_df = pd.read_csv('data\data101_timeseries.csv')
+beneficiaries_df = pd.read_csv('data\data101_beneficiaries_df.csv')
+disaster_by_haztype_df = pd.read_csv('data\data101_disaster_by_haztype.csv')
 
 choropleth_options = ["Disasters", "Population Density"]
 score_options = ["Adaptability Score", "Indicators"]
@@ -50,8 +50,8 @@ app = Dash(__name__, external_stylesheets=external_stylesheets)
 # App layout
 app.layout = dbc.Container([
     dbc.Row([
-        html.Div("Mapping Adaptive Capacities of Disaster Prone Areas by Evaluating Vulnerabilities through Poverty Indicators (2020)", className="text-primary text-center fs-3")
-    ], style={'margin-bottom': '20px'}),
+        html.Div("Mapping Adaptive Capacities of Disaster Prone Areas through Poverty Indicators (2020)", className="text-primary text-center fs-3")
+    ], style={'margin-bottom': '20px', 'font-weight': 'bold'}),
     
     dbc.Row([
         dbc.Col([
@@ -96,6 +96,7 @@ app.layout = dbc.Container([
                         'Adaptability Score',
                         id='score_radio',
                         ),
+
                         dcc.Loading(
                             id="adaptability_score-loading",
                             type="circle",
@@ -213,7 +214,10 @@ def adaptability_score(region, radio):
         # plotly
         fig = px.pie(df, values='values', names='names', hole=0.8,
                     color_discrete_sequence=['blue', 'white']) 
-        fig.update_layout(showlegend=False)
+        fig.update_layout(
+            showlegend=False,
+            title="Adaptability Score out of 5"
+        )
         fig.update_traces(textinfo='none')
         fig.data[0].textfont.color = 'white'
         fig.add_annotation(text=str(adpt_score), x=0.5, y=0.5, font=dict(color='black', size=20), showarrow=False)
@@ -247,8 +251,11 @@ def haztype_bar(region, haztype):
         dff = dff[dff['Hazard Type'] == haztype]
 
 
-    fig = px.bar(dff, x="Count", y=target, color="Hazard Type", orientation='h')
-    fig.update_layout(yaxis_title="Number of Disasters per Hazard Type")
+    fig = px.bar(dff, x="Count", y=target, color="Hazard Type", orientation='h', color_discrete_sequence=['#0a7de6', '#afcdee', '#90ce08', '#f2c200', '#f57600'])
+    fig.update_layout(
+        title="Frequency of Disasters by Hazard Type in 2020",
+        yaxis_title="Number of Disasters per Hazard Type"
+    )
     fig.update_layout(barmode='stack')
 
     return fig
@@ -269,7 +276,8 @@ def benefits_cluster(region):
 
     fig = px.bar(dff, x=target, y="Percentage", color="Income Classification",
                 text="Percentage", # Specify the column containing text to display on bars
-                labels={"Percentage": "% of Households"}) # Set the label for the text
+                labels={"Percentage": "% of Households"},
+                color_discrete_sequence=['#0a7de6', '#afcdee', '#90ce08', '#f2c200', '#f57600', '#8a2be2']) # Set the label for the text
 
     # Set the chart title
     fig.update_layout(title="% Households that RECEIVED Benefits per Income Bracket")
@@ -312,7 +320,7 @@ def hazTypeMonth_line(region, haztype):
     format_time_series['Date of Event (start)'] = format_time_series['Date of Event (start)'].map(month_mapping)
 
     # Create line plot
-    fig = px.line(format_time_series, x='Date of Event (start)', y='Count', color='Hazard Type', markers=True)
+    fig = px.line(format_time_series, x='Date of Event (start)', y='Count', color='Hazard Type', markers=True, color_discrete_sequence=['#f57600', '#afcdee', '#90ce08', '#0a7de6', '#f2c200'])
     fig.update_layout(
         title="Hazard Types over Time",
         yaxis_title="Number of Disasters",
