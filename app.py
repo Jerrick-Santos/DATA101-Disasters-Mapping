@@ -52,6 +52,14 @@ app.layout = dbc.Container([
     dbc.Row([
         html.Div("Mapping Adaptive Capacities of Disaster Prone Areas through Poverty Indicators (2020)", className="text-primary text-center fs-3")
     ], style={'margin-bottom': '20px', 'font-weight': 'bold'}),
+
+    dbc.Row([
+        dbc.Col([
+            html.P("To switch between viewing population density distribution and total disasters distribution, select the desired option from the radio button labeled 'Chloropleth Map of Population Density Distribution' or 'Chloropleth Map of Total Disasters Distribution'."),
+            html.P("Use the dropdown menu labeled 'Region' to filter data by specific regions. Simply click on the dropdown menu and select the desired region from the list to update all visualizations on the dashboard accordingly."),
+            html.P("Additionally, utilize the dropdown menus labeled 'Hazard Category,' 'Hazard Type,' and 'Region' to filter data based on specific hazard categories, hazard types, and regions. Begin by selecting a hazard category, then narrow down your selection by choosing a hazard type within the selected category, and finally, select a specific region if desired. This will refine the data displayed in the visualizations accordingly.")
+        ],  style={'padding': '0px 20px'})
+    ]),
     
     dbc.Row([
         dbc.Col([
