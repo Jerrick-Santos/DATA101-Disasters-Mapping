@@ -15,15 +15,15 @@ from pathlib import Path
 
 # Load GeoJson
 # Opening JSON file
-f = open("data\DATA101_MAP_DATA.geojson")
+f = open("DATA101-Disasters-Mapping\data\DATA101_MAP_DATA.geojson")
 map_data = json.load(f)
 
-disasters_df = pd.read_csv("data\data101_disasters.csv")
-adaptability_score_df = pd.read_csv('data\data101_finalz_adaptability_score.csv')
-pop_density_df = pd.read_csv('data\data101_pop_density.csv')
-timeseries_df = pd.read_csv('data\data101_timeseries.csv')
-beneficiaries_df = pd.read_csv('data\data101_beneficiaries_df.csv')
-disaster_by_haztype_df = pd.read_csv('data\data101_disaster_by_haztype.csv')
+disasters_df = pd.read_csv("DATA101-Disasters-Mapping\data\data101_disasters.csv")
+adaptability_score_df = pd.read_csv('DATA101-Disasters-Mapping\data\data101_finalz_adaptability_score.csv')
+pop_density_df = pd.read_csv('DATA101-Disasters-Mapping\data\data101_pop_density.csv')
+timeseries_df = pd.read_csv('DATA101-Disasters-Mapping\data\data101_timeseries.csv')
+beneficiaries_df = pd.read_csv('DATA101-Disasters-Mapping\data\data101_beneficiaries_df.csv')
+disaster_by_haztype_df = pd.read_csv('DATA101-Disasters-Mapping\data\data101_disaster_by_haztype.csv')
 
 choropleth_options = ["Disasters", "Population Density"]
 score_options = ["Adaptability Score", "Indicators"]
@@ -275,8 +275,6 @@ def benefits_cluster(region):
         target = "Income Classification"
 
     fig = px.bar(dff, x=target, y="Percentage", color="Income Classification",
-                text="Percentage", # Specify the column containing text to display on bars
-                labels={"Percentage": "% of Households"},
                 color_discrete_sequence=['#0a7de6', '#afcdee', '#90ce08', '#f2c200', '#f57600', '#8a2be2']) # Set the label for the text
 
     # Set the chart title
