@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
+import requests
 import json
 from dash import Dash, dcc, html, Input, Output, callback
 import dash_bootstrap_components as dbc
@@ -14,8 +15,9 @@ from pathlib import Path
 
 # Load GeoJson
 # Opening JSON file
-f = open("https://raw.githubusercontent.com/Jerrick-Santos/DATA101-Disasters-Mapping/main/data/DATA101_MAP_DATA.geojson")
-map_data = json.load(f)
+url = "https://raw.githubusercontent.com/Jerrick-Santos/DATA101-Disasters-Mapping/main/data/DATA101_MAP_DATA.geojson"
+response = requests.get(url)
+map_data = json.loads(response.text)
 
 disasters_df = pd.read_csv("https://raw.githubusercontent.com/Jerrick-Santos/DATA101-Disasters-Mapping/main/data/data101_disasters.csv")
 adaptability_score_df = pd.read_csv('https://raw.githubusercontent.com/Jerrick-Santos/DATA101-Disasters-Mapping/main/data/data101_finalz_adaptability_score.csv')
