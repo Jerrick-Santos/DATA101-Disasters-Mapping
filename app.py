@@ -15,15 +15,15 @@ from pathlib import Path
 
 # Load GeoJson
 # Opening JSON file
-f = open("DATA101-Disasters-Mapping\data\DATA101_MAP_DATA.geojson")
+f = open("https://raw.githubusercontent.com/Jerrick-Santos/DATA101-Disasters-Mapping/main/data/DATA101_MAP_DATA.geojson")
 map_data = json.load(f)
 
-disasters_df = pd.read_csv("DATA101-Disasters-Mapping\data\data101_disasters.csv")
-adaptability_score_df = pd.read_csv('DATA101-Disasters-Mapping\data\data101_finalz_adaptability_score.csv')
-pop_density_df = pd.read_csv('DATA101-Disasters-Mapping\data\data101_pop_density.csv')
-timeseries_df = pd.read_csv('DATA101-Disasters-Mapping\data\data101_timeseries.csv')
-beneficiaries_df = pd.read_csv('DATA101-Disasters-Mapping\data\data101_beneficiaries_df.csv')
-disaster_by_haztype_df = pd.read_csv('DATA101-Disasters-Mapping\data\data101_disaster_by_haztype.csv')
+disasters_df = pd.read_csv("https://raw.githubusercontent.com/Jerrick-Santos/DATA101-Disasters-Mapping/main/data/data101_disasters.csv")
+adaptability_score_df = pd.read_csv('https://raw.githubusercontent.com/Jerrick-Santos/DATA101-Disasters-Mapping/main/data/data101_finalz_adaptability_score.csv')
+pop_density_df = pd.read_csv('https://raw.githubusercontent.com/Jerrick-Santos/DATA101-Disasters-Mapping/main/data/data101_pop_density.csv')
+timeseries_df = pd.read_csv('https://raw.githubusercontent.com/Jerrick-Santos/DATA101-Disasters-Mapping/main/data/data101_timeseries.csv')
+beneficiaries_df = pd.read_csv('https://raw.githubusercontent.com/Jerrick-Santos/DATA101-Disasters-Mapping/main/data/data101_beneficiaries_df.csv')
+disaster_by_haztype_df = pd.read_csv('https://raw.githubusercontent.com/Jerrick-Santos/DATA101-Disasters-Mapping/main/data/data101_disaster_by_haztype.csv')
 
 choropleth_options = ["Disasters", "Population Density"]
 score_options = ["Adaptability Score", "Indicators"]
@@ -46,6 +46,7 @@ month_mapping = {
 # Initialize the app - incorporate a Dash Bootstrap theme
 external_stylesheets = [dbc.themes.FLATLY]
 app = Dash(__name__, external_stylesheets=external_stylesheets)
+server = app.server
 
 # App layout
 app.layout = dbc.Container([
